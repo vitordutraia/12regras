@@ -1,0 +1,403 @@
+/* assets/css/style.css */
+
+:root {
+    --primary-color: #0a2342; /* Azul escuro profundo */
+    --secondary-color: #0077b6; /* Azul mais vibrante para acentos */
+    --accent-color: #48cae4; /* Ciano claro para CTAs e destaques */
+    --light-color: #f8f9fa; /* Quase branco para fundos claros */
+    --dark-color: #212529; /* Preto suave para texto */
+    --text-color: #343a40;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    overflow-x: hidden; /* Prevenir scroll horizontal */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(10, 35, 66, 0.9); /* Azul escuro com transparência */
+    color: var(--light-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--primary-color); /* Azul escuro sólido ao rolar */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-nav li {
+    margin-left: 2rem;
+}
+
+.navbar-nav a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: url('assets/images/hero_background.jpg') no-repeat center center/cover; /* Adicionar uma imagem de fundo aqui */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-color);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 35, 66, 0.7); /* Overlay escuro */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.hero-sub-provocador {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px; /* Botões arredondados */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+}
+
+.btn-hero {
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.autor-mention {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* General Section Styling */
+.section-padding {
+    padding: 80px 0;
+}
+
+.alternate-bg {
+    background-color: #eef3f7; /* Fundo alternativo suave */
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Rules Grid */
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.rule-card {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.rule-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.rule-number {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.rule-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.rule-description {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit-title {
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-text {
+    font-size: 1rem;
+}
+
+/* Author Section */
+.author-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.author-image-container {
+    flex: 1;
+    max-width: 300px;
+}
+
+.author-image {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.author-text-container {
+    flex: 2;
+    text-align: left;
+}
+
+.author-text-container .section-title {
+    text-align: left;
+}
+
+/* CTA Section */
+.cta-section .section-title {
+    color: var(--primary-color);
+}
+
+.cta-section .section-text {
+    color: var(--text-color);
+}
+
+.book-cover {
+    max-width: 250px;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-lg {
+    font-size: 1.3rem;
+    padding: 1rem 3rem;
+}
+
+/* Footer */
+.footer-section {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* ScrollReveal Animations - initial state (hidden) */
+.animate-on-scroll {
+    visibility: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    .navbar .container {
+        flex-direction: column;
+    }
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+    .navbar-nav li {
+        margin: 0 0.5rem;
+    }
+    .author-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .author-text-container .section-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .rules-grid {
+        grid-template-columns: 1fr;
+    }
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Font Awesome Icons (se for usar localmente, precisa do setup) */
+/* Para este exemplo, estou assumindo que Font Awesome será carregado via CDN no HTML se necessário para os ícones de benefícios */
+
